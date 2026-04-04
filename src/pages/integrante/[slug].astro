@@ -13,19 +13,24 @@ export async function getStaticPaths(){
 }
 const { integrante } = Astro.props
 const { id, data } = integrante
-const { name = "Integrante", description, cover, youtube, instagram, x, tiktok } = data
+const { name = "Integrante", description, cover, youtube, youtube2, instagram, x, tiktok } = data
 const { Content } = await render(integrante)
 ---
 <Layout title={name} description={description}>
     <main>
+        <a href="/integrante" class="back">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+            <p>Volver</p>
+        </a>
         <section class="perfil-hero">
             <div class="perfil-info">
                 <h2 transition:name={`title-${id}`}>{name}</h2>
                 <p>{description}</p>
-            {(youtube || instagram || x || tiktok) && (
+            {(youtube || youtube2 || instagram || x || tiktok) && (
             <div class="perfil-redes">
                 <Redes
                     youtube={youtube}
+                    youtube2={youtube2}
                     instagram={instagram}
                     x={x}
                     tiktok={tiktok}
@@ -39,6 +44,18 @@ const { Content } = await render(integrante)
     </main>
 </Layout>
 <style>
+    .back {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        gap: 0.3em;
+
+        & svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
     .perfil-hero {
         display: flex;
         align-items: center;

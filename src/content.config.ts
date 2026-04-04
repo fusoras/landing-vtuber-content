@@ -11,6 +11,7 @@ const integrantes = defineCollection({
 			description: z.string(),
 			cover: z.string().optional(),
 			youtube: z.string().optional(),
+			youtube2: z.string().optional(),
 			instagram: z.string().optional(),
 			x: z.string().optional(),
 			tiktok: z.string().optional(),

@@ -1,13 +1,19 @@
 ---
 interface Props {
     youtube?: string,
+    youtube2?: string,
     instagram?: string,
     x?: string,
     tiktok?: string,
 }
-const { youtube, instagram, x, tiktok } = Astro.props
+const { youtube, youtube2, instagram, x, tiktok } = Astro.props
 ---
 {youtube && <a href={youtube} target="_blank" rel="noopener noreferrer">
+    <svg>
+        <use xlink:href="/sprite.css.svg#youtube" />
+    </svg>
+</a>}
+{youtube2 && <a href={youtube2} target="_blank" rel="noopener noreferrer">
     <svg>
         <use xlink:href="/sprite.css.svg#youtube" />
     </svg>

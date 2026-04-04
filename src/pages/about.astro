@@ -17,9 +17,26 @@ import Layout from "@/layouts/Layout.astro";
 		<img src="/unnamed.png" alt="icon" />
 		<p>21 INTEGRANTES</p>
 		<h2>TALENTOS</h2>
-		<a href="/integrantes/aleinad">
-			<img src="/ui/talent-1.png" alt="Imagen representativa a la talento de Aleinad">
-		</a>
+		<div class="talents">
+			<a href="/integrante/aleinad">
+				<img src="/ui/talent-1.png" alt="Imagen representativa al talento de Aleinad">
+			</a>
+			<a href="/integrante/komiriri">
+				<img src="/ui/talent-2.png" alt="Imagen representativa al talento de Komiriri_">
+			</a>
+			<a href="/integrante/rin_vtuber">
+				<img src="/ui/talent-3.png" alt="Imagen representativa al talento de Rin_Vtuber">
+			</a>
+			<a href="/integrante">
+				<img src="/ui/talent-4.png" alt="Imagen representativa al talento">
+			</a>
+			<a href="/integrante/vafmo">
+				<img src="/ui/talent-5.png" alt="Imagen representativa al talento de V.A.F.M.O.">
+			</a>
+			<a href="/integrante">
+				<img src="/ui/talent-6.png" alt="Imagen representativa al talento">
+			</a>
+		</div>
 		<p>
 			Nuestros integrantes están llenos de creadores con grandes ideas sobre
 			contenidos diversos.
@@ -28,7 +45,7 @@ import Layout from "@/layouts/Layout.astro";
 			Desde integrantes que son VTubers, artistas hasta compositores
 			musicales, cosplayers y más.
 		</p>
-		<img src="/ui/bg-1.png" alt="Imagen de fondo" />
+		<img class="img-bg" src="/ui/bg-1.png" alt="Imagen de fondo" />
 		<h2>FAQ</h2>
 		<div class="faq-details">
 			<details>
@@ -61,6 +78,9 @@ import Layout from "@/layouts/Layout.astro";
 	</main>
 </Layout>
 <style>
+	.img-bg {
+		width: 250px;
+	}
 	.faq-details {
 		display: flex;
 		flex-direction: column;
@@ -111,5 +131,10 @@ import Layout from "@/layouts/Layout.astro";
 	}
 	li {
 		margin: 0.25rem 0;
+	}
+	.talents {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1em;
 	}
 </style>
