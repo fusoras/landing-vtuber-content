@@ -8,7 +8,7 @@ import HeaderLink from './HeaderLink.astro';
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/integrantes">Integrantes</HeaderLink>
+			<HeaderLink href="/integrante">Integrantes</HeaderLink>
 			<HeaderLink href="/about">Sobre nosotros</HeaderLink>
 		</div>
 		<div class="social-links">
@@ -31,9 +31,79 @@ import HeaderLink from './HeaderLink.astro';
 				</svg>
 			</a>
 		</div>
+		<div class="menu">
+			<button id="open-dialog" popovertarget="my-dialog">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M21 6a1 1 0 0 1 -1 1h-16a1 1 0 1 1 0 -2h16a1 1 0 0 1 1 1" /><path d="M21 12a1 1 0 0 1 -1 1h-16a1 1 0 0 1 0 -2h16a1 1 0 0 1 1 1" /><path d="M21 18a1 1 0 0 1 -1 1h-16a1 1 0 0 1 0 -2h16a1 1 0 0 1 1 1" /></svg>
+			</button>
+
+			<section id="my-dialog" popover>
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/integrante">Integrantes</HeaderLink>
+				<HeaderLink href="/about">Sobre nosotros</HeaderLink>
+
+				<div class="social-links">
+				<a href="https://www.youtube.com/@TonotosCrew" target="_blank">
+					<span class="sr-only">Follow Astro on Mastodon</span>
+					<svg width="30" height="30">
+						<use xlink:href="/sprite.css.svg#youtube" />
+					</svg>
+				</a>
+				<a href="https://x.com/TonotosCrew" target="_blank">
+					<span class="sr-only">Follow Astro on Twitter</span>
+					<svg width="30" height="30">
+						<use xlink:href="/sprite.css.svg#x" />
+					</svg>
+				</a>
+				<a href="https://www.instagram.com/tonotoscrew/" target="_blank">
+					<span class="sr-only">Go to Astro's GitHub repo</span>
+					<svg width="30" height="30">
+						<use xlink:href="/sprite.css.svg#instagram" />
+					</svg>
+				</a>
+			</div>
+				<button popovertarget="my-dialog" popovertargetaction="hide">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6.707 5.293l5.293 5.292l5.293 -5.292a1 1 0 0 1 1.414 1.414l-5.292 5.293l5.292 5.293a1 1 0 0 1 -1.414 1.414l-5.293 -5.292l-5.293 5.292a1 1 0 1 1 -1.414 -1.414l5.292 -5.293l-5.292 -5.293a1 1 0 0 1 1.414 -1.414" /></svg>
+				</button>
+			</section>
+		</div>
 	</nav>
 </header>
 <style>
+	#my-dialog:popover-open {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 1em;
+		border: none;
+		background-color: rgba(31, 29, 29, 0.5);
+    	backdrop-filter: blur(30px) saturate(1.5);
+
+		inset: unset;
+		right: 0;
+		height: 100%;
+		width: 70%;
+		touch-action: none;
+
+		& button {
+			background-color: rgb(196, 84, 84);
+			border-radius: 12px;
+			padding: 1em;
+			padding-block: .5em;
+			margin-top: auto;
+			margin-bottom: max(2rem, env(safe-area-inset-bottom));
+
+			& svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		& .social-links{
+			display: flex;
+			justify-content: center;
+			gap: 1em;
+		}
+	}
 	header {
 		margin: 0;
 		padding: 0 1em;
@@ -53,6 +123,7 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		height: min(70px, 10vh);
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -64,6 +135,28 @@ import HeaderLink from './HeaderLink.astro';
 		text-decoration: none;
 		border-bottom-color: var(--pink);
 	}
+	.internal-links{
+		@media (width <= 500px) {
+			display: none;
+		}
+	}
+	.menu {
+		display: none;
+
+		@media (width <= 500px) {
+			display: block;
+		}
+
+		& button {
+			background: none;
+			border: none;
+			cursor: pointer;
+
+			&:active {
+				scale: 0.95;
+			}
+		}
+	}
 	.social-links,
 	.social-links a {
 		display: flex;
@@ -74,3 +167,6 @@ import HeaderLink from './HeaderLink.astro';
 		}
 	}
 </style>
+<script>
+
+</script>

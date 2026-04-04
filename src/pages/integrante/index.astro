@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from "@/layouts/Layout.astro"
+
 const integrantes = await getCollection('integrantes')
 ---
 
@@ -14,9 +15,9 @@ const integrantes = await getCollection('integrantes')
 
 				return (
 					<article>
-						<a href={`/integrantes/${id}`}>
-                            {cover && <img src={cover} alt={name ?? id} transition:name={`cover-talent-${id}`} />}
-							<h3 transition:name={`cover-title-${id}`}>{name}</h3>
+						<a href={`/integrante/${id}`}>
+                            <img transition:name={`img-${id}`} src={cover} alt={name} />
+							<h2 transition:name={`title-${id}`}>{name}</h2>
 							<p>{description}</p>
 						</a>
 					</article>
@@ -58,7 +59,8 @@ const integrantes = await getCollection('integrantes')
                 color: #fff;
                 text-decoration: none;
 
-                & h3 {
+                & h2 {
+                    font-size: clamp(1rem, 2vw + 1rem, 3rem);
                     margin: 0;
                 }
                 & p {

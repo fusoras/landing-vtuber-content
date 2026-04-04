@@ -2,6 +2,7 @@
 import Redes from '@/components/CardRedes.astro';
 
 interface Props {
+    integrante: any;
     name: string;
     description: string;
     cover: string;
@@ -12,20 +13,13 @@ interface Props {
 }
 
 const {
-    name,
-    description,
-    cover,
     youtube,
     instagram,
     x,
     tiktok,
 } = Astro.props;
-const slug = Astro.url.pathname.split('/').filter(Boolean).at(-1) ?? 'name';
 ---
 <section class="perfil-hero">
-    <div class="perfil-info">
-        <h1 transition:name={`cover-title-${slug}`}>{name}</h1>
-        <p>{description}</p>
         {(youtube || instagram || x || tiktok) && (
             <div class="perfil-redes">
                 <Redes
@@ -37,8 +31,6 @@ const slug = Astro.url.pathname.split('/').filter(Boolean).at(-1) ?? 'name';
             </div>
         )}
     </div>
-
-    <img src={cover} alt={name} transition:name={`cover-talent-${slug}`} />
 </section>
 
 <style>

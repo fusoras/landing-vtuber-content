@@ -1,0 +1,85 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Redes from '@/components/CardRedes.astro';
+
+export async function getStaticPaths(){
+    const integrantes = await getCollection('integrantes');
+
+    return integrantes.map((integrante) => ({
+        params: { slug: integrante.id },
+        props: { integrante }
+    }))
+}
+const { integrante } = Astro.props
+const { id, data } = integrante
+const { name = "Integrante", description, cover, youtube, instagram, x, tiktok } = data
+const { Content } = await render(integrante)
+---
+<Layout title={name} description={description}>
+    <main>
+        <section class="perfil-hero">
+            <div class="perfil-info">
+                <h2 transition:name={`title-${id}`}>{name}</h2>
+                <p>{description}</p>
+            {(youtube || instagram || x || tiktok) && (
+            <div class="perfil-redes">
+                <Redes
+                    youtube={youtube}
+                    instagram={instagram}
+                    x={x}
+                    tiktok={tiktok}
+                />
+            </div>
+        )}
+            </div>
+            <img transition:name={`img-${id}`} src={cover} alt={name} />
+        </section>
+        <Content />
+    </main>
+</Layout>
+<style>
+    .perfil-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section img {
+        width: 300px;
+        max-width: 40%;
+        border-radius: 12px;
+    }
+
+    .perfil-info {
+        flex: 1;
+    }
+
+    .perfil-info p {
+        margin-top: 0;
+    }
+    .perfil-redes {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+
+        @media (width <= 530px) {
+            justify-content: center;
+        }
+    }
+    @media (width <= 530px) {
+        .perfil-hero {
+            flex-direction: column-reverse;
+        }
+
+        .perfil-cover {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    h2 {
+        font-size: clamp(1rem, 2vw + 1rem, 3rem);
+    }
+</style>
