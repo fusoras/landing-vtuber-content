@@ -3,7 +3,19 @@ name: Aleinad
 description: VTuber que hace streams o videos jugando, charlando con la comunidad, etc.
 cover: /cover/aleinad.jpg
 ---
-https://www.youtube.com/@aleinadvtuberpizza
+import CardYoutube from '@/components/CardYoutube.astro';
+import IntegranteHero from '@/components/IntegranteHero.astro';
+
+<IntegranteHero
+    name="Aleinad"
+    description="VTuber que hace streams o videos jugando, charlando con la comunidad, etc."
+    cover="/cover/aleinad.jpg"
+    youtube="https://www.youtube.com/@aleinadvtuberpizza"
+    instagram="https://www.instagram.com/art_aleinadpizza"
+    x="https://x.com/Aleinadvtpizza"
+    tiktok="https://www.tiktok.com/@aleinadpizza"
+/>
+
 Cumpleaños: 23 de octubre
 
 País: México
@@ -26,16 +38,8 @@ Personaje
 
 # Contenido recomendado 
 
-import CardYoutube from '@/components/CardYoutube.astro';
-
 <CardYoutube>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/5mhW6ofVCdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</CardYoutube>
-
-<CardYoutube>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/59C6UGOKc-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</CardYoutube>
-
-<CardYoutube>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Kurkt-TY1_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" src="https://www.youtube.com/embed/5mhW6ofVCdQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" src="https://www.youtube.com/embed/59C6UGOKc-U" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe loading="lazy" src="https://www.youtube.com/embed/Kurkt-TY1_g" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </CardYoutube>
