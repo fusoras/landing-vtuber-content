@@ -62,13 +62,13 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	nav a.active {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		border-bottom-color: var(--pink);
 	}
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	@media (width <= 720px) {
 		.social-links {
 			display: none;
 		}

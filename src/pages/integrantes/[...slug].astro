@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "@/layouts/LayoutIntegrantes.astro";
+import Layout from "@/layouts/Layout.astro";
+
 
 export async function getStaticPaths(){
     const integrantes = await getCollection('integrantes');
@@ -12,7 +13,7 @@ export async function getStaticPaths(){
 }
 const { integrante } = Astro.props
 const { data } = integrante
-const { name, description, cover } = data
+const { name = "Integrante", description, cover } = data
 const { Content } = await render(integrante)
 ---
 <Layout title={name} description={description}>

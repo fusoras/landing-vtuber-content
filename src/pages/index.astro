@@ -1,26 +1,15 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '@/layouts/Layout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 ---
-
-<!doctype html>
-<html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<p>✧Tonotos Crew es un grupo creado con la finalidad de proporcionar apoyo a creadores de contenido variado en su crecimiento en las redes.</p>
-			<a href="/about">Sobre nosotros</a>
-			<h2>¿Qué es Tonotos Crew?</h2>
-			<p>Somos un grupo el cual busca apoyar a sus integrantes con su crecimiento en las redes sociales mediante el resolverles sus dudas o proporcionándoles distintas ayudas para su creación de contenido.</p>
-			<p>A diferencia de otros grupos o agencias, aquí aceptamos a TODO tipo de creador de contenido mientras no tenga contenido o actitudes inapropiadas. Básicamente en este grupo pueden entrar VTubers, músicos, artistas y más. En diversas redes sociales como YouTube, TikTok, Instagram, Twitch, etc... </p>
-			<h2>✧NUESTROS INTEGRANTES✧</h2>
-			<a href="/integrantes">Ver integrantes</a>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<main>
+		<p>✧Tonotos Crew es un grupo creado con la finalidad de proporcionar apoyo a creadores de contenido variado en su crecimiento en las redes.</p>
+		<a href="/about">Sobre nosotros</a>
+		<h2>¿Qué es Tonotos Crew?</h2>
+		<p>Somos un grupo el cual busca apoyar a sus integrantes con su crecimiento en las redes sociales mediante el resolverles sus dudas o proporcionándoles distintas ayudas para su creación de contenido.</p>
+		<p>A diferencia de otros grupos o agencias, aquí aceptamos a TODO tipo de creador de contenido mientras no tenga contenido o actitudes inapropiadas. Básicamente en este grupo pueden entrar VTubers, músicos, artistas y más. En diversas redes sociales como YouTube, TikTok, Instagram, Twitch, etc... </p>
+		<h2>✧NUESTROS INTEGRANTES✧</h2>
+		<a href="/integrantes">Ver integrantes</a>
+	</main>
+</Layout>

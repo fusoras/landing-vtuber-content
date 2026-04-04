@@ -11,6 +11,7 @@
 		0 16px 32px rgba(var(--gray), 33%);
 	color-scheme: dark;
 	--color: hsl(0, 0%, 69%);
+	--pink: rgb(214, 111, 194);
 }
 @font-face {
 	font-family: "Atkinson";
