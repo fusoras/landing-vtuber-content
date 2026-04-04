@@ -15,8 +15,8 @@ const integrantes = await getCollection('integrantes')
 				return (
 					<article>
 						<a href={`/integrantes/${id}`}>
-                            {cover && <img src={cover} alt={name ?? id} transition:name="cover-talent" />}
-							<h3 transition:name="cover-title">{name}</h3>
+                            {cover && <img src={cover} alt={name ?? id} transition:name={`cover-talent-${id}`} />}
+							<h3 transition:name={`cover-title-${id}`}>{name}</h3>
 							<p>{description}</p>
 						</a>
 					</article>
@@ -69,7 +69,6 @@ const integrantes = await getCollection('integrantes')
                     max-width: 100%;
                     height: auto;
                     border-radius: 50%;
-
                 }
 
             }

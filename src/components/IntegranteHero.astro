@@ -20,10 +20,11 @@ const {
     x,
     tiktok,
 } = Astro.props;
+const slug = Astro.url.pathname.split('/').filter(Boolean).at(-1) ?? 'name';
 ---
 <section class="perfil-hero">
     <div class="perfil-info">
-        <h1 transition:name="cover-title">{name}</h1>
+        <h1 transition:name={`cover-title-${slug}`}>{name}</h1>
         <p>{description}</p>
         {(youtube || instagram || x || tiktok) && (
             <div class="perfil-redes">
@@ -37,7 +38,7 @@ const {
         )}
     </div>
 
-    <img class="perfil-cover" src={cover} alt={name} transition:name="cover-talent" />
+    <img src={cover} alt={name} transition:name={`cover-talent-${slug}`} />
 </section>
 
 <style>
@@ -47,6 +48,12 @@ const {
         justify-content: space-between;
         gap: 2rem;
         margin-bottom: 1.5rem;
+
+        & img {
+            width: 300px;
+            max-width: 40%;
+            border-radius: 12px;
+        }
     }
 
     .perfil-info {
@@ -67,12 +74,6 @@ const {
         @media (width <= 530px) {
             justify-content: center;
         }
-    }
-
-    .perfil-cover {
-        width: 300px;
-        max-width: 40%;
-        border-radius: 12px;
     }
 
     @media (width <= 530px) {
