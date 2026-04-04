@@ -5,16 +5,43 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<main>
 		<p>✧Tonotos Crew es un grupo creado con la finalidad de proporcionar apoyo a creadores de contenido variado en su crecimiento en las redes.</p>
-		<a href="/about">Sobre nosotros</a>
+		<a href="/about"><p>Sobre nosotros</p>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+		</a>
 		<h2>¿Qué es Tonotos Crew?</h2>
 		<p>Somos un grupo el cual busca apoyar a sus integrantes con su crecimiento en las redes sociales mediante el resolverles sus dudas o proporcionándoles distintas ayudas para su creación de contenido.</p>
 		<p>A diferencia de otros grupos o agencias, aquí aceptamos a TODO tipo de creador de contenido mientras no tenga contenido o actitudes inapropiadas. Básicamente en este grupo pueden entrar VTubers, músicos, artistas y más. En diversas redes sociales como YouTube, TikTok, Instagram, Twitch, etc... </p>
 		<h2>✧NUESTROS INTEGRANTES✧</h2>
-		<a href="/integrante">Ver integrantes</a>
+		<a href="/integrante"><p>Ver integrantes</p>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+		</a>
 	</main>
 </Layout>
 <style>
 	a {
-		color: #c92d89
+		display: inline-flex;
+		place-items: center;
+		gap: .5em;
+		background-color: hsl(300, 40%, 50%);
+		background: linear-gradient(hsl(300, 60%, 50%), hsl(300, 40%, 50%)) no-repeat;
+		padding-inline: .7em;
+		padding-block: .5em;
+		color: #fff;
+		border-radius: 12px;
+		text-decoration: none;
+		transition: background .3s ease;
+
+		&:hover {
+			background: linear-gradient(hsl(300, 80%, 50%), hsl(300, 60%, 50%)) no-repeat;
+		}
+		&:active {
+			scale: .98;
+		}
+		& p {
+			margin: 0;
+		}
+	}
+	h2 {
+		margin-block: 1em;
 	}
 </style>
