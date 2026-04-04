@@ -23,7 +23,7 @@ const {
 ---
 <section class="perfil-hero">
     <div class="perfil-info">
-        <h1>{name}</h1>
+        <h1 transition:name="cover-title">{name}</h1>
         <p>{description}</p>
         {(youtube || instagram || x || tiktok) && (
             <div class="perfil-redes">
@@ -37,7 +37,7 @@ const {
         )}
     </div>
 
-    <img class="perfil-cover" src={cover} alt={name} />
+    <img class="perfil-cover" src={cover} alt={name} transition:name="cover-talent" />
 </section>
 
 <style>

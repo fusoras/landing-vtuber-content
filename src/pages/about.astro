@@ -30,36 +30,47 @@ import Layout from "@/layouts/LayoutIntegrantes.astro";
 		</p>
 		<img src="/ui/bg-1.png" alt="Imagen de fondo" />
 		<h2>FAQ</h2>
-		<details>
-			<summary>¿Cuándo se creó el Tonotos Crew?</summary>
-			<p>Su creación fue el 12 de mayo del 2024 pero comenzó a ser público el 26 de junio del 2024</p>
-		</details>
-		<details>
-			<summary>¿Qué tanta libertad tienen sus integrantes?</summary>
-			<p>TODOS los integrantes tienen total libertad al elegir cuándo y cómo crearán sus contenidos o con qué personas colaborarán.</p>
-		</details>
-		<details>
-			<summary>¿Cómo se manejan los formatos de contenido y las redes sociales?:</summary>
-			<p>Cada integrante puede elegir qué contenido creará al igual que las redes que utilizará, lo cual permite que cada uno logre encontrar el que más comodo, sencillo y agradable le resulte </p>
-		</details>
-		<details>
-			<summary>¿Quiénes conforman el staff?</summary>
-			<p>Actualmente somos 8 personas:</p>
-			<ul>
-				<li>XGummyX: Ceo</li>
-				<li>Dat4: Artista</li>
-				<li>Misaki: Co-Ceo</li>
-				<li>Lumi: Productor musical</li>
-				<li>Teorías: Administrador</li>
-				<li>Gatomate: Community manager</li>
-				<li>Elisa: Administradora</li>
-				<li>Cheto: Productor musical</li>
-			</ul>
-		</details>
+		<div class="faq-details">
+			<details>
+				<summary>¿Cuándo se creó el Tonotos Crew?</summary>
+				<p>Su creación fue el 12 de mayo del 2024 pero comenzó a ser público el 26 de junio del 2024</p>
+			</details>
+			<details>
+				<summary>¿Qué tanta libertad tienen sus integrantes?</summary>
+				<p>TODOS los integrantes tienen total libertad al elegir cuándo y cómo crearán sus contenidos o con qué personas colaborarán.</p>
+			</details>
+			<details>
+				<summary>¿Cómo se manejan los formatos de contenido y las redes sociales?:</summary>
+				<p>Cada integrante puede elegir qué contenido creará al igual que las redes que utilizará, lo cual permite que cada uno logre encontrar el que más comodo, sencillo y agradable le resulte </p>
+			</details>
+			<details>
+				<summary>¿Quiénes conforman el staff?</summary>
+				<p>Actualmente somos 8 personas:</p>
+				<ul>
+					<li>XGummyX: Ceo</li>
+					<li>Dat4: Artista</li>
+					<li>Misaki: Co-Ceo</li>
+					<li>Lumi: Productor musical</li>
+					<li>Teorías: Administrador</li>
+					<li>Gatomate: Community manager</li>
+					<li>Elisa: Administradora</li>
+					<li>Cheto: Productor musical</li>
+				</ul>
+			</details>
+		</div>
 	</main>
 </Layout>
 <style>
+	.faq-details {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
 	details {
+		padding: 1em;
+		border: 1px solid #fff;
+		border-radius: 8px;
+
 		& ul {
 			list-style: none;
 			padding-left: 0;

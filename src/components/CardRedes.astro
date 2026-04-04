@@ -8,16 +8,24 @@ interface Props {
 const { youtube, instagram, x, tiktok } = Astro.props
 ---
 {youtube && <a href={youtube} target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-youtube" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 3a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zM9 9v6a1 1 0 0 0 1.514.857l5-3a1 1 0 0 0 0-1.714l-5-3A1 1 0 0 0 9 9"/></svg>
+    <svg>
+        <use xlink:href="/sprite.css.svg#youtube" />
+    </svg>
 </a>}
 {instagram && <a href={instagram} target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram" viewBox="0 0 24 24"><path fill="none" stroke="none" d="M0 0h24v24H0z"/><path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0m7.5-4.5v.01"/></svg>
+    <svg>
+        <use xlink:href="/sprite.css.svg#instagram" />
+    </svg>
 </a>}
 {x && <a href={x} target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x" viewBox="0 0 24 24"><path fill="none" stroke="none" d="M0 0h24v24H0z"/><path d="m4 4 11.733 16H20L8.267 4zm0 16 6.768-6.768m2.46-2.46L20 4"/></svg>
+    <svg>
+        <use xlink:href="/sprite.css.svg#x" />
+    </svg>
 </a>}
 {tiktok && <a href={tiktok} target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok" viewBox="0 0 24 24"><path fill="none" stroke="none" d="M0 0h24v24H0z"/><path d="M21 7.917v4.034A9.95 9.95 0 0 1 16 10v4.5a6.5 6.5 0 1 1-8-6.326V12.5a2.5 2.5 0 1 0 4 2V3h4.083A6.005 6.005 0 0 0 21 7.917"/></svg>
+    <svg>
+        <use xlink:href="/sprite.css.svg#tiktok" />
+    </svg>
 </a>}
 
 <style>
