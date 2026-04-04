@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from "@/layouts/LayoutIntegrantes.astro"
+const integrantes = await getCollection('integrantes')
+---
+
+<Layout title="TODOS LOS INTEGRANTES" description="Conoce a los integrantes de Tonotos Crew">
+    <h1>TODOS LOS INTEGRANTES</h1>
+	<section>
+		{
+			integrantes.map(integrante => {
+				const { id, data } = integrante;
+                const { name, description, cover } = data
+
+				return (
+					<article>
+						<a href={`/integrantes/${id}`}>
+                            {cover && <img src={cover} alt={name ?? id} />}
+							<h3>{name}</h3>
+							<p>{description}</p>
+						</a>
+					</article>
+				)
+			})
+		}
+	</section>
+</Layout>
+<style>
+    h1 {
+        text-align: center;
+        margin: 1em 0;
+    }
+    section {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        padding: 1em;
+
+        & article {
+            width: 300px;
+            padding: 1em;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            transition: scale 0.2s ease;
+            
+            &:hover {
+                scale: 1.02;
+            }
+
+            & a {
+                color: #fff;
+                text-decoration: none;
+                & img {
+                    border-radius: 50%;
+
+                }
+            }
+        }
+    }
+</style>
