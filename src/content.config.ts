@@ -15,6 +15,7 @@ const integrantes = defineCollection({
 			instagram: z.string().optional(),
 			x: z.string().optional(),
 			tiktok: z.string().optional(),
+			type: z.union([z.string(), z.array(z.string())]).optional()
 		}),
 });
 

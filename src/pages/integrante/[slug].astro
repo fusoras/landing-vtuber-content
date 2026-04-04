@@ -24,7 +24,7 @@ const { Content } = await render(integrante)
         </a>
         <section class="perfil-hero">
             <div class="perfil-info">
-                <h2 transition:name={`title-${id}`}>{name}</h2>
+                <h1 transition:name={`title-${id}`}>{name}</h1>
                 <p>{description}</p>
             {(youtube || youtube2 || instagram || x || tiktok) && (
             <div class="perfil-redes">
@@ -95,8 +95,5 @@ const { Content } = await render(integrante)
             width: 100%;
             max-width: 100%;
         }
-    }
-    h2 {
-        font-size: clamp(1rem, 2vw + 1rem, 3rem);
     }
 </style>
