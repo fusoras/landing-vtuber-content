@@ -14,12 +14,20 @@ import Layout from "@/layouts/Layout.astro";
 			✧Priorizamos la <strong>creatividad</strong> y <strong>libertad</strong> de
 			nuestros integrantes✧
 		</p>
-		<img class="img-bg" src="/ui/bg-0.png" alt="icon" />
+		<picture>
+			<source srcset="/ui/bg-0.avif" type="image/avif" />
+			<source srcset="/ui/bg-0.png" type="image/png" />
+			<img class="img-bg" src="/ui/bg-0.png" alt="Imagen de fondo">
+		</picture>
 		<p>21 INTEGRANTES</p>
 		<h2>TALENTOS</h2>
 		<div class="talents">
 			<a href="/integrante/aleinad">
-				<img src="/ui/talent-1.png" alt="Imagen representativa al talento de Aleinad">
+				<picture>
+					<source srcset="/ui/talent-1.avif" type="image/avif" />
+					<source srcset="/ui/talent-1.png" type="image/png" />
+					<img src="/ui/talent-1.png" alt="Imagen de fondo">
+				</picture>
 			</a>
 			<a href="/integrante/komiriri">
 				<img src="/ui/talent-2.png" alt="Imagen representativa al talento de Komiriri_">
