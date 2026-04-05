@@ -12,6 +12,7 @@
 	color-scheme: dark;
 	--color: hsl(0, 0%, 69%);
 	--pink: rgb(214, 111, 194);
+	--pink-hover: hsl(300, 40%, 50%);
 }
 @font-face {
 	font-family: "Atkinson";

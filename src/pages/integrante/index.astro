@@ -17,7 +17,6 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
 ---
 
 <Layout title="TODOS LOS INTEGRANTES" description="Conoce a los integrantes de Tonotos Crew">
-    <h1>TODOS LOS INTEGRANTES</h1>
 	<!-- <section>
 		{
 			integrantes.map(integrante => {
@@ -48,7 +47,7 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
                     <a href={`/integrante/${id}`}>
                         <img src={cover} alt={name} />
                         <h2>{name}</h2>
-                        <p>{description}</p>
+                        {/* <p>{description}</p> */}
                     </a>
                 </article>
             )
@@ -67,7 +66,7 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
                     <a href={`/integrante/${id}`}>
                         <img transition:name={`img-${id}`} src={cover} alt={name} />
                         <h2 transition:name={`title-${id}`}>{name}</h2>
-                        <p>{description}</p>
+                        {/* <p>{description}</p> */}
                     </a>
                 </article>
             )
@@ -87,7 +86,7 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
                     <a href={`/integrante/${id}`}>
                         <img transition:name={`img-${id}`} src={cover} alt={name} />
                         <h2 transition:name={`title-${id}`}>{name}</h2>
-                        <p>{description}</p>
+                        {/* <p>{description}</p> */}
                     </a>
                 </article>
             )
@@ -130,7 +129,6 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
                 text-decoration: none;
 
                 & h2 {
-                    font-size: clamp(1rem, 2vw + 1rem, 3rem);
                     margin: 0;
                 }
                 & p {

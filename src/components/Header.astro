@@ -42,25 +42,25 @@ import HeaderLink from './HeaderLink.astro';
 				<HeaderLink href="/about">Sobre nosotros</HeaderLink>
 
 				<div class="social-links">
-				<a href="https://www.youtube.com/@TonotosCrew" target="_blank">
-					<span class="sr-only">Follow Astro on Mastodon</span>
-					<svg width="30" height="30">
-						<use xlink:href="/sprite.css.svg#youtube" />
-					</svg>
-				</a>
-				<a href="https://x.com/TonotosCrew" target="_blank">
-					<span class="sr-only">Follow Astro on Twitter</span>
-					<svg width="30" height="30">
-						<use xlink:href="/sprite.css.svg#x" />
-					</svg>
-				</a>
-				<a href="https://www.instagram.com/tonotoscrew/" target="_blank">
-					<span class="sr-only">Go to Astro's GitHub repo</span>
-					<svg width="30" height="30">
-						<use xlink:href="/sprite.css.svg#instagram" />
-					</svg>
-				</a>
-			</div>
+					<a href="https://www.youtube.com/@TonotosCrew" target="_blank">
+						<span class="sr-only">Follow Astro on Mastodon</span>
+						<svg width="30" height="30">
+							<use xlink:href="/sprite.css.svg#youtube" />
+						</svg>
+					</a>
+					<a href="https://x.com/TonotosCrew" target="_blank">
+						<span class="sr-only">Follow Astro on Twitter</span>
+						<svg width="30" height="30">
+							<use xlink:href="/sprite.css.svg#x" />
+						</svg>
+					</a>
+					<a href="https://www.instagram.com/tonotoscrew/" target="_blank">
+						<span class="sr-only">Go to Astro's GitHub repo</span>
+						<svg width="30" height="30">
+							<use xlink:href="/sprite.css.svg#instagram" />
+						</svg>
+					</a>
+				</div>
 				<button popovertarget="my-dialog" popovertargetaction="hide">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6.707 5.293l5.293 5.292l5.293 -5.292a1 1 0 0 1 1.414 1.414l-5.292 5.293l5.292 5.293a1 1 0 0 1 -1.414 1.414l-5.293 -5.292l-5.293 5.292a1 1 0 1 1 -1.414 -1.414l5.292 -5.293l-5.292 -5.293a1 1 0 0 1 1.414 -1.414" /></svg>
 				</button>
@@ -160,6 +160,14 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links,
 	.social-links a {
 		display: flex;
+	}
+	.social-links a {
+		&:hover {
+			color: var(--pink-hover);
+		}
+		&:active {
+			scale: 0.95;
+		}
 	}
 	@media (width <= 720px) {
 		.social-links {
