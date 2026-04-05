@@ -69,50 +69,13 @@ import HeaderLink from './HeaderLink.astro';
 	</nav>
 </header>
 <style>
-	#my-dialog:popover-open {
-		display: flex;
-		flex-direction: column;
-		gap: .5em;
-		padding: 1em;
-		border: none;
-		background-color: rgba(31, 29, 29, 0.5);
-    	backdrop-filter: blur(30px) saturate(1.5);
-
-		inset: unset;
-		right: 0;
-		height: 100%;
-		width: 70%;
-		touch-action: none;
-
-		& button {
-			background-color: rgb(196, 84, 84);
-			border-radius: 12px;
-			padding: 1em;
-			padding-block: .5em;
-			margin-top: auto;
-			margin-bottom: max(2rem, env(safe-area-inset-bottom));
-
-			& svg {
-				width: 30px;
-				height: 30px;
-			}
-		}
-
-		& .social-links{
-			display: flex;
-			justify-content: center;
-			gap: 1em;
-		}
-		& a {
-			padding: 0.6em 0.5em;
-		}
-	}
 	header {
 		margin: 0;
 		padding: 0 1em;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		box-shadow: 0 2px 8px rgb(var(--black), 5%);
 		border-bottom: 1px solid #000;
 	}
+
 	h2 {
 		margin: 0;
 		font-size: 1em;
@@ -122,27 +85,32 @@ import HeaderLink from './HeaderLink.astro';
 	h2 a.active {
 		text-decoration: none;
 	}
+
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		height: min(70px, 10vh);
 	}
+
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
+
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--pink);
 	}
+
 	.internal-links{
 		@media (width <= 500px) {
 			display: none;
 		}
 	}
+
 	.menu {
 		display: none;
 
@@ -160,18 +128,61 @@ import HeaderLink from './HeaderLink.astro';
 			}
 		}
 	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
+
+	#my-dialog:popover-open {
+		display: flex;
+		flex-direction: column;
+		gap: .5em;
+		padding: 1em;
+		border: none;
+		background-color: rgb(31 29 29 / 50%);
+    	backdrop-filter: blur(30px) saturate(1.5);
+		inset: unset;
+		right: 0;
+		height: 100%;
+		width: 70%;
+		touch-action: none;
+
+		& button {
+			background-color: rgb(196 84 84);
+			border-radius: 12px;
+			padding: 1em;
+			padding-block: .5em;
+			margin-top: auto;
+			margin-bottom: max(2rem, env(safe-area-inset-bottom));
+
+			& svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		& .social-links{
+			display: flex;
+			justify-content: center;
+			gap: 1em;
+		}
+
+		& a {
+			padding: 0.6em 0.5em;
+		}
+	}
+
 	.social-links a {
 		&:hover {
 			color: var(--pink-hover);
 		}
+
 		&:active {
 			scale: 0.95;
 		}
 	}
+
 	@media (width <= 720px) {
 		.social-links {
 			display: none;

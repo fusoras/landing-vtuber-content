@@ -1,0 +1,17 @@
+{
+  "stylelint.validate": [
+    "css",
+    "html",
+    "astro"
+  ],
+  "editor.formatOnSave": false,
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  }
+}

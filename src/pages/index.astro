@@ -22,8 +22,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 		display: inline-flex;
 		place-items: center;
 		gap: .5em;
-		background-color: hsl(300, 40%, 50%);
-		background: linear-gradient(hsl(300, 60%, 50%), hsl(300, 40%, 50%)) no-repeat;
+		
+		/* background-color: hsl(300deg 40% 50%); */
+		background: linear-gradient(hsl(300deg 60% 50%), hsl(300deg 40% 50%)) no-repeat;
 		padding-inline: .7em;
 		padding-block: .5em;
 		color: #fff;
@@ -32,15 +33,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 		transition: background .3s ease;
 
 		&:hover {
-			background: linear-gradient(hsl(300, 80%, 50%), hsl(300, 60%, 50%)) no-repeat;
+			background: linear-gradient(hsl(300deg 80% 50%), hsl(300deg 60% 50%)) no-repeat;
 		}
+
 		&:active {
 			scale: .98;
 		}
+
 		& p {
 			margin: 0;
 		}
 	}
+
 	h2 {
 		margin-block: 1em;
 	}

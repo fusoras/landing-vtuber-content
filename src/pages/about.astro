@@ -89,13 +89,33 @@ import Layout from "@/layouts/Layout.astro";
 	.img-bg {
 		width: 250px;
 	}
+
 	.faq-details {
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
 	}
+
+	summary {
+		color: #fff;
+	}
+
+	ul {
+		color: #fff;
+		padding-left: 0;
+	}
+
+	li {
+		margin: 0.25rem 0;
+	}
+
+	p {
+		color: #fff;
+		line-height: 1.6;
+	}
+	
 	details {
-		border: 1px solid hsl(0, 0%, 70%);
+		border: 1px solid hsl(0deg 0% 70%);
 		border-left: 5px solid var(--pink);
 		border-radius: 8px;
 
@@ -103,43 +123,36 @@ import Layout from "@/layouts/Layout.astro";
 			list-style: none;
 			padding: 1em;
 		}
+
 		& li {
 			display: flex;
 			align-items: center;
 			gap: 0.5rem;
 		}
+
 		& li::before {
 			content: "✧";
 		}
+
 		& summary {
 			padding: 1em;
 			cursor: pointer;
 		}
+
 		& p {
 			padding-inline: 1em;
 			padding-inline: 1lh;
 		}
 	}
-	p {
-		color: #fff;
-		line-height: 1.6;
-	}
+
 	strong {
-		color: hsl(56, 70%, 50%);
+		color: hsl(56deg 70% 50%);
 	}
+
 	h2 {
 		text-align: center;
 	}
-	summary {
-		color: #fff;
-	}
-	ul {
-		color: #fff;
-		padding-left: 0;
-	}
-	li {
-		margin: 0.25rem 0;
-	}
+
 	.talents {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
