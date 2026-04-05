@@ -1,5 +1,5 @@
 :root {
-	--accent: #2337ff;
+	--accent: hsl(300, 40%, 50%);
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
@@ -83,7 +83,7 @@ a {
 	color: var(--accent);
 }
 a:hover {
-	color: var(--accent);
+	color: hsl(300, 50%, 50%);
 }
 p {
 	margin-bottom: 1em;
