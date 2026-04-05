@@ -40,12 +40,15 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
     {
         fundadores.map(integrante => {
             const { id, data } = integrante;
-            const { name, description, cover } = data
+            const { name, description, cover, coverAvif } = data
 
             return (
                 <article>
                     <a href={`/integrante/${id}`}>
-                        <img src={cover} alt={name} />
+                        <picture>
+                            {coverAvif && <source srcset={coverAvif} type="image/avif" />}
+                            <img src={cover} alt={name} />
+                        </picture>
                         <h2>{name}</h2>
                         {/* <p>{description}</p> */}
                     </a>
@@ -59,12 +62,15 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
     {
         renacimiento.map(integrante => {
             const { id, data } = integrante;
-            const { name, description, cover } = data
+            const { name, description, cover, coverAvif } = data
 
             return (
                 <article>
                     <a href={`/integrante/${id}`}>
-                        <img transition:name={`img-${id}`} src={cover} alt={name} />
+                        <picture>
+                            {coverAvif && <source srcset={coverAvif} type="image/avif" />}
+                            <img transition:name={`img-${id}`} src={cover} alt={name} />
+                        </picture>
                         <h2 transition:name={`title-${id}`}>{name}</h2>
                         {/* <p>{description}</p> */}
                     </a>
@@ -79,12 +85,15 @@ const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renaci
     {
         staff.map(integrante => {
             const { id, data } = integrante;
-            const { name, description, cover } = data
+            const { name, description, cover, coverAvif } = data
 
             return (
                 <article>
                     <a href={`/integrante/${id}`}>
-                        <img transition:name={`img-${id}`} src={cover} alt={name} />
+                        <picture>
+                            {coverAvif && <source srcset={coverAvif} type="image/avif" />}
+                            <img transition:name={`img-${id}`} src={cover} alt={name} />
+                        </picture>
                         <h2 transition:name={`title-${id}`}>{name}</h2>
                         {/* <p>{description}</p> */}
                     </a>
