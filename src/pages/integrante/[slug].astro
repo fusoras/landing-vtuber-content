@@ -20,11 +20,11 @@ const { Content } = await render(integrante)
     <main>
         <a href="/integrante" class="back">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
-            <p>Volver</p>
+            <p>Integrantes</p>
         </a>
         <section class="perfil-hero">
             <div class="perfil-info">
-                <h1 transition:name={`title-${id}`}>{name}</h1>
+                <h1>{name}</h1>
                 <p>{description}</p>
             {(youtube || youtube2 || instagram || x || tiktok) && (
             <div class="perfil-redes">
@@ -38,7 +38,7 @@ const { Content } = await render(integrante)
             </div>
         )}
             </div>
-            <img transition:name={`img-${id}`} src={cover} alt={name} />
+            <img src={cover} alt={name} transition:animate="fade"/>
         </section>
         <Content />
     </main>
@@ -50,10 +50,15 @@ const { Content } = await render(integrante)
         color: #fff;
         text-decoration: none;
         gap: 0.3em;
+        max-width: 150px;
+        margin-bottom: 1em;
 
         & svg {
             width: 30px;
             height: 30px;
+        }
+        & p {
+            margin: 0;
         }
     }
     .perfil-hero {

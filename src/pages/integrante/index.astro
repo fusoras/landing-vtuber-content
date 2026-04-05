@@ -3,27 +3,17 @@ import { getCollection } from 'astro:content';
 import Layout from "@/layouts/Layout.astro"
 
 const integrantes = await getCollection('integrantes')
-const fundadores = integrantes.filter(({ data }) => {
-    const types = Array.isArray(data.type)
-        ? data.type
-        : data.type?.split(',').map((type) => type.trim()) ?? []
+const hasType = (typeValue: string | string[] | undefined, target: string) => {
+    const types = Array.isArray(typeValue)
+        ? typeValue
+        : typeValue?.split(',').map((type) => type.trim()) ?? []
 
-    return types.includes('fundador')
-})
-const staff = integrantes.filter(({ data }) => {
-    const types = Array.isArray(data.type)
-        ? data.type
-        : data.type?.split(',').map((type) => type.trim()) ?? []
+    return types.includes(target)
+}
 
-    return types.includes('staff')
-})
-const renacimiento = integrantes.filter(({ data }) => {
-    const types = Array.isArray(data.type)
-        ? data.type
-        : data.type?.split(',').map((type) => type.trim()) ?? []
-
-    return types.includes('renacimiento')
-})
+const fundadores = integrantes.filter(({ data }) => hasType(data.type, 'fundador'))
+const staff = integrantes.filter(({ data }) => hasType(data.type, 'staff'))
+const renacimiento = integrantes.filter(({ data }) => hasType(data.type, 'renacimiento'))
 ---
 
 <Layout title="TODOS LOS INTEGRANTES" description="Conoce a los integrantes de Tonotos Crew">
@@ -46,7 +36,7 @@ const renacimiento = integrantes.filter(({ data }) => {
 			})
 		}
 	</section> -->
-    <h2>Fundadores</h2>
+    <h2>Era de los FUNDADORES</h2>
     <section>
     {
         fundadores.map(integrante => {
@@ -56,8 +46,8 @@ const renacimiento = integrantes.filter(({ data }) => {
             return (
                 <article>
                     <a href={`/integrante/${id}`}>
-                        <img transition:name={`img-${id}`} src={cover} alt={name} />
-                        <h2 transition:name={`title-${id}`}>{name}</h2>
+                        <img src={cover} alt={name} />
+                        <h2>{name}</h2>
                         <p>{description}</p>
                     </a>
                 </article>

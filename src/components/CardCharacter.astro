@@ -1,0 +1,18 @@
+---
+const { imgCharacter } = Astro.props;
+---
+<picture>
+    <img src={imgCharacter} alt="Imagen de personaje" />
+    <slot/>
+</picture>
+<style>
+    picture {
+        display: block;
+        height: auto;
+        width: 160px;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+</style>
