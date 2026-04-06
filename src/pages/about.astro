@@ -30,19 +30,39 @@ import Layout from "@/layouts/Layout.astro";
 				</picture>
 			</a>
 			<a href="/integrante/komiriri">
-				<img src="/ui/talent-2.png" alt="Imagen representativa al talento de Komiriri_">
+				<picture>
+					<source srcset="/ui/talent-2.avif" type="image/avif" />
+					<source srcset="/ui/talent-2.png" type="image/png" />
+					<img src="/ui/talent-2.png" alt="Imagen representativa al talento de Komiriri_">
+				</picture>
 			</a>
 			<a href="/integrante/rin_vtuber">
-				<img src="/ui/talent-3.png" alt="Imagen representativa al talento de Rin_Vtuber">
+				<picture>
+					<source srcset="/ui/talent-3.avif" type="image/avif" />
+					<source srcset="/ui/talent-3.png" type="image/png" />
+					<img src="/ui/talent-3.png" alt="Imagen representativa al talento de Rin_Vtuber">
+				</picture>
 			</a>
 			<a href="/integrante">
-				<img src="/ui/talent-4.png" alt="Imagen representativa al talento">
+				<picture>
+					<source srcset="/ui/talent-4.avif" type="image/avif" />
+					<source srcset="/ui/talent-4.png" type="image/png" />
+					<img src="/ui/talent-4.png" alt="Imagen representativa al talento">
+				</picture>
 			</a>
 			<a href="/integrante/vafmo">
-				<img src="/ui/talent-5.png" alt="Imagen representativa al talento de V.A.F.M.O.">
+				<picture>
+					<source srcset="/ui/talent-5.avif" type="image/avif" />
+					<source srcset="/ui/talent-5.png" type="image/png" />
+					<img src="/ui/talent-5.png" alt="Imagen representativa al talento de V.A.F.M.O.">
+				</picture>
 			</a>
 			<a href="/integrante">
-				<img src="/ui/talent-6.png" alt="Imagen representativa al talento">
+				<picture>
+					<source srcset="/ui/talent-6.avif" type="image/avif" />
+					<source srcset="/ui/talent-6.png" type="image/png" />
+					<img src="/ui/talent-6.png" alt="Imagen representativa al talento">
+				</picture>
 			</a>
 		</div>
 		<p>
@@ -87,7 +107,11 @@ import Layout from "@/layouts/Layout.astro";
 </Layout>
 <style>
 	.img-bg {
-		width: 250px;
+		display: block;
+		height: auto;
+		width: 200px;
+		object-fit: contain;
+		aspect-ratio: 1/1;
 	}
 
 	.faq-details {
@@ -176,7 +200,13 @@ import Layout from "@/layouts/Layout.astro";
 
 	.talents {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 1em;
+
+		& img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 16/9;
+		}
 	}
 </style>
