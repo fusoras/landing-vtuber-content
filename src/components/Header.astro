@@ -36,7 +36,7 @@ import HeaderLink from './HeaderLink.astro';
 				<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/sprite.css.svg#menu"></use></svg>
 			</button>
 
-			<section id="my-dialog" popover>
+			<section id="my-dialog" popover class="modal-open">
 				<HeaderLink href="/">Home</HeaderLink>
 				<HeaderLink href="/integrante">Integrantes</HeaderLink>
 				<HeaderLink href="/about">Sobre nosotros</HeaderLink>
@@ -61,7 +61,7 @@ import HeaderLink from './HeaderLink.astro';
 						</svg>
 					</a>
 				</div>
-				<button popovertarget="my-dialog" popovertargetaction="hide">
+				<button popovertarget="my-dialog" popovertargetaction="hide" aria-label="Cerrar menú de navegación">
 					<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/sprite.css.svg#x-close"></use></svg>
 				</button>
 			</section>
@@ -72,7 +72,7 @@ import HeaderLink from './HeaderLink.astro';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		box-shadow: 0 2px 8px rgb(var(--black) / 5%);
+		box-shadow: 0 2px 8px rgb(var(--color-surface-base-rgb) / 5%);
 		border-bottom: 1px solid #000;
 	}
 
@@ -100,10 +100,10 @@ import HeaderLink from './HeaderLink.astro';
 
 			&.active {
 				text-decoration: none;
-				border-bottom-color: var(--pink);
+				border-bottom-color: var(--color-accent);
 
 				&:hover {
-					color: var(--white);
+					color: var(--color-text-primary);
 				}
 			}
 		}
@@ -119,7 +119,7 @@ import HeaderLink from './HeaderLink.astro';
 				display: flex;
 
 				&:hover {
-					color: var(--pink-hover);
+					color: var(--color-accent-light);
 				}
 
 				&:active {
@@ -140,7 +140,7 @@ import HeaderLink from './HeaderLink.astro';
 			background: none;
 			border: none;
 			cursor: pointer;
-			color: var(--white);
+			color: var(--color-text-primary);
 
 			&:active {
 				scale: 0.95;
@@ -148,13 +148,19 @@ import HeaderLink from './HeaderLink.astro';
 		}
 	}
 
-	#my-dialog:popover-open {
+	.modal-open {
+		&::backdrop {
+			background-color: rgb(0 0 0 / 60%);
+		}
+	}
+
+	.modal-open:popover-open {
 		display: flex;
 		flex-direction: column;
 		gap: .5em;
 		padding: 1em;
 		border: none;
-		background-color: rgb(31 29 29 / 50%);
+		background-color: rgb(31 29 29 / 30%);
     	backdrop-filter: blur(30px) saturate(1.5);
 		inset: unset;
 		right: 0;
@@ -163,7 +169,7 @@ import HeaderLink from './HeaderLink.astro';
 		touch-action: none;
 
 		& button {
-			background-color: rgb(var(--black));
+			background-color: hsl(var(--color-text-primary-hsl) / 40%);
 			border-radius: 12px;
 			padding: 1em;
 			padding-block: .5em;
@@ -180,6 +186,8 @@ import HeaderLink from './HeaderLink.astro';
 			display: flex;
 			justify-content: center;
 			gap: 1em;
+			border-top: solid 1px hsl(var(--color-text-muted-hsl));
+			margin-top: 1em;
 		}
 
 		& a {

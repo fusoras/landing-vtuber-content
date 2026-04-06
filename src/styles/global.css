@@ -1,18 +1,25 @@
 :root {
-	--accent: hsl(300deg 40% 50%);
-	--black: 15 18 25;
-	--gray: 96 115 159;
-	--gray-light: 229 233 240;
-	--gray-gradient: rgb(var(--gray-light) / 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgb(var(--gray) / 25%), 0 8px 24px rgb(var(--gray) / 33%),
-		0 16px 32px rgb(var(--gray) / 33%);
+	--color-surface-base-rgb: 15 18 25;
+	--color-neutral-rgb: 96 115 159;
+	--color-neutral-light-rgb: 229 233 240;
+	--gradient-neutral: rgb(var(--color-neutral-light-rgb) / 50%), #fff;
+	--shadow-soft:
+		0 2px 6px rgb(var(--color-neutral-rgb) / 25%), 0 8px 24px rgb(var(--color-neutral-rgb) / 33%),
+		0 16px 32px rgb(var(--color-neutral-rgb) / 33%);
+	--color-text-primary-hsl: 0deg 0% 69%;
+	--color-text-muted-hsl: 0deg 0% 25%;
+	--color-text-primary: hsl(var(--color-text-primary-hsl));
+	--color-accent: rgb(214 111 194);
+	--color-accent-light: hsl(300deg 40% 50%);
+	--color-accent-dark: hsl(300deg 40% 35%);
+	--gradient-accent: linear-gradient(
+		45deg,
+		var(--color-accent),
+		var(--color-accent-light) 30%,
+		white 60%
+	);
 
 	color-scheme: dark;
-
-	--white: hsl(0deg 0% 69%);
-	--pink: rgb(214 111 194);
-	--pink-hover: hsl(300deg 40% 50%);
 }
 
 @font-face {
@@ -44,7 +51,7 @@ body {
 	/* background: linear-gradient(rgba(34, 41, 57, 50%), #000) no-repeat; */
 	background: linear-gradient(rgb(34 41 57 / 50%), #000) no-repeat;
 	overflow-wrap: break-word;
-	color: var(--white);
+	color: var(--color-text-primary);
 	font-size: 1.3rem;
 	line-height: 1.7;
 
@@ -103,11 +110,11 @@ b {
 }
 
 a {
-	color: var(--white);
+	color: var(--color-text-primary);
 }
 
 a:hover {
-	color: var(--accent);
+	color: var(--color-accent-light);
 }
 
 p {
@@ -139,7 +146,7 @@ img {
 
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
+	background-color: rgb(var(--color-neutral-light-rgb));
 	border-radius: 2px;
 }
 
@@ -152,16 +159,9 @@ pre > code {
 	all: unset;
 }
 
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
-}
-
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid rgb(var(--color-neutral-light-rgb));
 }
 
 .sr-only {
