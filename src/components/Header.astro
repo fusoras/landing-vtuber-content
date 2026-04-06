@@ -72,7 +72,7 @@ import HeaderLink from './HeaderLink.astro';
 	header {
 		margin: 0;
 		padding: 0 1em;
-		box-shadow: 0 2px 8px rgb(var(--black), 5%);
+		box-shadow: 0 2px 8px rgb(var(--black) / 5%);
 		border-bottom: 1px solid #000;
 	}
 
@@ -81,40 +81,58 @@ import HeaderLink from './HeaderLink.astro';
 		font-size: 1em;
 	}
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		height: min(70px, 10vh);
-	}
 
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
+		& .internal-links {
+			@media (width <= 570px) {
+				display: none;
+			}
+		}
 
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--pink);
-	}
+		& a {
+			padding: 1em 0.5em;
+			border-bottom: 4px solid transparent;
+			text-decoration: none;
 
-	.internal-links{
-		@media (width <= 500px) {
-			display: none;
+			&.active {
+				text-decoration: none;
+				border-bottom-color: var(--pink);
+
+				&:hover {
+					color: var(--white);
+				}
+			}
+		}
+
+		& .social-links {
+			display: flex;
+
+			@media (width <= 740px) {
+				display: none;
+			}
+
+			& a {
+				display: flex;
+
+				&:hover {
+					color: var(--pink-hover);
+				}
+
+				&:active {
+					scale: 0.95;
+				}
+			}
 		}
 	}
 
 	.menu {
 		display: none;
 
-		@media (width <= 500px) {
+		@media (width <= 740px) {
 			display: block;
 		}
 
@@ -122,16 +140,12 @@ import HeaderLink from './HeaderLink.astro';
 			background: none;
 			border: none;
 			cursor: pointer;
+			color: var(--white);
 
 			&:active {
 				scale: 0.95;
 			}
 		}
-	}
-
-	.social-links,
-	.social-links a {
-		display: flex;
 	}
 
 	#my-dialog:popover-open {
@@ -149,7 +163,7 @@ import HeaderLink from './HeaderLink.astro';
 		touch-action: none;
 
 		& button {
-			background-color: rgb(196 84 84);
+			background-color: rgb(var(--black));
 			border-radius: 12px;
 			padding: 1em;
 			padding-block: .5em;
@@ -173,22 +187,4 @@ import HeaderLink from './HeaderLink.astro';
 		}
 	}
 
-	.social-links a {
-		&:hover {
-			color: var(--pink-hover);
-		}
-
-		&:active {
-			scale: 0.95;
-		}
-	}
-
-	@media (width <= 720px) {
-		.social-links {
-			display: none;
-		}
-	}
 </style>
-<script>
-
-</script>

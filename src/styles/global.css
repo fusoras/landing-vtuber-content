@@ -1,18 +1,16 @@
 :root {
 	--accent: hsl(300deg 40% 50%);
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgb(var(--gray-light), 50%), #fff;
+	--black: 15 18 25;
+	--gray: 96 115 159;
+	--gray-light: 229 233 240;
+	--gray-gradient: rgb(var(--gray-light) / 50%), #fff;
 	--box-shadow:
-		0 2px 6px rgb(var(--gray), 25%), 0 8px 24px rgb(var(--gray), 33%),
-		0 16px 32px rgb(var(--gray), 33%);
+		0 2px 6px rgb(var(--gray) / 25%), 0 8px 24px rgb(var(--gray) / 33%),
+		0 16px 32px rgb(var(--gray) / 33%);
 
 	color-scheme: dark;
 
-	--color: hsl(0deg 0% 69%);
+	--white: hsl(0deg 0% 69%);
 	--pink: rgb(214 111 194);
 	--pink-hover: hsl(300deg 40% 50%);
 }
@@ -46,15 +44,23 @@ body {
 	/* background: linear-gradient(rgba(34, 41, 57, 50%), #000) no-repeat; */
 	background: linear-gradient(rgb(34 41 57 / 50%), #000) no-repeat;
 	overflow-wrap: break-word;
-	color: var(--color);
-	font-size: 20px;
+	color: var(--white);
+	font-size: 1.3rem;
 	line-height: 1.7;
+
+	@media (width <= 720px) {
+		font-size: 1.1rem;
+	}
 }
 
 main {
 	width: clamp(200px, 75vw, 65ch);
 	margin: auto;
 	padding: 3em 1em;
+
+	@media (width <= 720px) {
+		padding: 1em;
+	}
 }
 
 h1,
@@ -64,7 +70,6 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem;
-	color: var(--color);
 	line-height: 1.2;
 }
 
@@ -98,11 +103,11 @@ b {
 }
 
 a {
-	color: var(--accent);
+	color: var(--white);
 }
 
 a:hover {
-	color: hsl(300deg 50% 50%);
+	color: var(--accent);
 }
 
 p {
@@ -157,16 +162,6 @@ blockquote {
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
-}
-
-@media (width <= 720px) {
-	body {
-		font-size: 18px;
-	}
-
-	main {
-		padding: 1em;
-	}
 }
 
 .sr-only {
