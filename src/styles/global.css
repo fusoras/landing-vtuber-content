@@ -52,7 +52,7 @@ body {
 }
 
 main {
-	width: clamp(200px, 60vw, 65ch);
+	width: clamp(200px, 75vw, 65ch);
 	margin: auto;
 	padding: 3em 1em;
 }
