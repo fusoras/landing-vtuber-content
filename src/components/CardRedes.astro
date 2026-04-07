@@ -8,27 +8,27 @@ interface Props {
 }
 const { youtube, youtube2, instagram, x, tiktok } = Astro.props
 ---
-{youtube && <a href={youtube} target="_blank" rel="noopener noreferrer">
+{youtube && <a href={youtube} target="_blank" rel="noopener noreferrer" title="YouTube">
     <svg>
         <use xlink:href="/sprite.css.svg#youtube" />
     </svg>
 </a>}
-{youtube2 && <a href={youtube2} target="_blank" rel="noopener noreferrer">
+{youtube2 && <a href={youtube2} target="_blank" rel="noopener noreferrer" title="YouTube">
     <svg>
         <use xlink:href="/sprite.css.svg#youtube" />
     </svg>
 </a>}
-{instagram && <a href={instagram} target="_blank" rel="noopener noreferrer">
+{instagram && <a href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
     <svg>
         <use xlink:href="/sprite.css.svg#instagram" />
     </svg>
 </a>}
-{x && <a href={x} target="_blank" rel="noopener noreferrer">
+{x && <a href={x} target="_blank" rel="noopener noreferrer" title="x.com">
     <svg>
         <use xlink:href="/sprite.css.svg#x" />
     </svg>
 </a>}
-{tiktok && <a href={tiktok} target="_blank" rel="noopener noreferrer">
+{tiktok && <a href={tiktok} target="_blank" rel="noopener noreferrer" title="TikTok">
     <svg>
         <use xlink:href="/sprite.css.svg#tiktok" />
     </svg>
