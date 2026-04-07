@@ -2,23 +2,20 @@
 	--color-surface-base-rgb: 15 18 25;
 	--color-neutral-rgb: 96 115 159;
 	--color-neutral-light-rgb: 229 233 240;
-	--gradient-neutral: rgb(var(--color-neutral-light-rgb) / 50%), #fff;
 	--shadow-soft:
 		0 2px 6px rgb(var(--color-neutral-rgb) / 25%), 0 8px 24px rgb(var(--color-neutral-rgb) / 33%),
 		0 16px 32px rgb(var(--color-neutral-rgb) / 33%);
 	--color-text-primary-hsl: 0deg 0% 69%;
 	--color-text-muted-hsl: 0deg 0% 25%;
 	--color-text-primary: hsl(var(--color-text-primary-hsl));
-	--color-accent: rgb(214 111 194);
-	--color-accent-light: hsl(300deg 40% 50%);
-	--color-accent-dark: hsl(300deg 40% 35%);
-	--gradient-accent: linear-gradient(
-		45deg,
-		var(--color-accent),
-		var(--color-accent-light) 30%,
-		white 60%
-	);
+	--color-accent: hsl(312deg 55% 63%);
 
+	/*  hsl(312deg 40% 50%); */
+	--color-accent-light: hsl(from var(--color-accent) h calc(s - 15) calc(l - 13));
+
+	/* hsl(300deg 40% 35%); */
+	--color-accent-dark: hsl(from var(--color-accent) calc(h - 12) calc(s - 15) calc(l - 28));
+	
 	color-scheme: dark;
 }
 
@@ -47,8 +44,6 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-
-	/* background: linear-gradient(rgba(34, 41, 57, 50%), #000) no-repeat; */
 	background: linear-gradient(rgb(34 41 57 / 50%), #000) no-repeat;
 	overflow-wrap: break-word;
 	color: var(--color-text-primary);
