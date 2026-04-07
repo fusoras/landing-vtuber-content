@@ -141,10 +141,6 @@ import HeaderLink from '@/components/HeaderLink.astro';
 			border: none;
 			cursor: pointer;
 			color: var(--color-text-primary);
-
-			&:active {
-				scale: 0.95;
-			}
 		}
 	}
 
@@ -169,9 +165,9 @@ import HeaderLink from '@/components/HeaderLink.astro';
 		touch-action: none;
 
 		& button {
-			background-color: hsl(var(--color-text-primary-hsl) / 40%);
+			border: solid 1px hsl(var(--color-text-muted-hsl));
+			background-color: rgb(var(--color-surface-base-rgb) / 40%);
 			border-radius: 12px;
-			padding: 1em;
 			padding-block: .5em;
 			margin-top: auto;
 			margin-bottom: max(2rem, env(safe-area-inset-bottom));
