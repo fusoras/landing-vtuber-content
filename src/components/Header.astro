@@ -74,121 +74,124 @@ import HeaderLink from '@/components/HeaderLink.astro';
 		padding: 0 1em;
 		box-shadow: 0 2px 8px rgb(var(--color-surface-base-rgb) / 5%);
 		border-bottom: 1px solid #000;
-	}
-
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		height: min(70px, 10vh);
-
-		& .internal-links {
-			@media (width <= 570px) {
-				display: none;
-			}
-		}
-
-		& a {
-			padding: 1em 0.5em;
-			border-bottom: 4px solid transparent;
-			text-decoration: none;
-
-			&.active {
-				text-decoration: none;
-				border-bottom-color: var(--color-accent);
-
-				&:hover {
-					color: var(--color-text-primary);
-				}
-			}
-		}
-
-		& .social-links {
+		
+		& nav {
 			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: min(70px, 10vh);
 
-			@media (width <= 740px) {
-				display: none;
+			& .internal-links {
+				@media (width <= 570px) {
+					display: none;
+				}
 			}
 
 			& a {
+				padding: 1em 0.5em;
+				border-bottom: 4px solid transparent;
+				text-decoration: none;
+
+				&.active {
+					text-decoration: none;
+					border-bottom-color: var(--color-accent);
+
+					&:hover {
+						color: var(--color-text-primary);
+					}
+				}
+			}
+
+			& .social-links {
 				display: flex;
 
-				&:hover {
-					color: var(--color-accent-light);
+				@media (width <= 740px) {
+					display: none;
 				}
 
-				&:active {
-					scale: 0.95;
+				& a {
+					display: flex;
+
+					&:hover {
+						color: var(--color-accent-light);
+					}
+
+					&:active {
+						scale: 0.95;
+					}
+				}
+			}
+
+			h2 {
+				margin: 0;
+				font-size: 1em;
+
+				& a:hover {
+					color: var(--color-text-primary);
+				}
+			}
+
+			.menu {
+				display: none;
+
+				@media (width <= 740px) {
+					display: block;
+				}
+
+				& button {
+					background: none;
+					border: none;
+					cursor: pointer;
+					color: var(--color-text-primary);
+				}
+
+				.modal-open {
+					&::backdrop {
+						background-color: rgb(0 0 0 / 60%);
+					}
+
+					:popover-open {
+						display: flex;
+						flex-direction: column;
+						gap: .5em;
+						padding: 1em;
+						border: none;
+						background-color: rgb(31 29 29 / 30%);
+						backdrop-filter: blur(30px) saturate(1.5);
+						inset: unset;
+						right: 0;
+						height: 100%;
+						width: 70%;
+						touch-action: none;
+
+						& button {
+							border: solid 1px hsl(var(--color-text-muted-hsl));
+							background-color: rgb(var(--color-surface-base-rgb) / 40%);
+							border-radius: 12px;
+							padding-block: .5em;
+							margin-top: auto;
+							margin-bottom: max(2rem, env(safe-area-inset-bottom));
+
+							& svg {
+								width: 30px;
+								height: 30px;
+							}
+						}
+
+						& .social-links {
+							display: flex;
+							justify-content: center;
+							gap: 1em;
+							border-top: solid 1px hsl(var(--color-text-muted-hsl));
+							margin-top: 1em;
+						}
+
+						& a {
+							padding: 0.6em 0.5em;
+						}
+					}
 				}
 			}
 		}
 	}
-
-	.menu {
-		display: none;
-
-		@media (width <= 740px) {
-			display: block;
-		}
-
-		& button {
-			background: none;
-			border: none;
-			cursor: pointer;
-			color: var(--color-text-primary);
-		}
-	}
-
-	.modal-open {
-		&::backdrop {
-			background-color: rgb(0 0 0 / 60%);
-		}
-	}
-
-	.modal-open:popover-open {
-		display: flex;
-		flex-direction: column;
-		gap: .5em;
-		padding: 1em;
-		border: none;
-		background-color: rgb(31 29 29 / 30%);
-    	backdrop-filter: blur(30px) saturate(1.5);
-		inset: unset;
-		right: 0;
-		height: 100%;
-		width: 70%;
-		touch-action: none;
-
-		& button {
-			border: solid 1px hsl(var(--color-text-muted-hsl));
-			background-color: rgb(var(--color-surface-base-rgb) / 40%);
-			border-radius: 12px;
-			padding-block: .5em;
-			margin-top: auto;
-			margin-bottom: max(2rem, env(safe-area-inset-bottom));
-
-			& svg {
-				width: 30px;
-				height: 30px;
-			}
-		}
-
-		& .social-links{
-			display: flex;
-			justify-content: center;
-			gap: 1em;
-			border-top: solid 1px hsl(var(--color-text-muted-hsl));
-			margin-top: 1em;
-		}
-
-		& a {
-			padding: 0.6em 0.5em;
-		}
-	}
-
 </style>
