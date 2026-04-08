@@ -173,8 +173,10 @@ import HeaderLink from '@/components/HeaderLink.astro';
 							margin-bottom: max(2rem, env(safe-area-inset-bottom));
 
 							& svg {
-								width: 30px;
-								height: 30px;
+								--size: 30px;
+								
+								width: var(--size);
+								height: var(--size);
 							}
 						}
 

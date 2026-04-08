@@ -9,38 +9,40 @@ interface Props {
 const { youtube, youtube2, instagram, x, tiktok } = Astro.props
 ---
 {youtube && <a href={youtube} target="_blank" rel="noopener noreferrer" title="YouTube">
-    <svg>
+    <svg width="35" height="35">
         <use xlink:href="/sprite.css.svg#youtube" />
     </svg>
 </a>}
 {youtube2 && <a href={youtube2} target="_blank" rel="noopener noreferrer" title="YouTube">
-    <svg>
+    <svg width="35" height="35">
         <use xlink:href="/sprite.css.svg#youtube" />
     </svg>
 </a>}
 {instagram && <a href={instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
-    <svg>
+    <svg width="35" height="35">
         <use xlink:href="/sprite.css.svg#instagram" />
     </svg>
 </a>}
 {x && <a href={x} target="_blank" rel="noopener noreferrer" title="x.com">
-    <svg>
+    <svg width="35" height="35">
         <use xlink:href="/sprite.css.svg#x" />
     </svg>
 </a>}
 {tiktok && <a href={tiktok} target="_blank" rel="noopener noreferrer" title="TikTok">
-    <svg>
+    <svg width="35" height="35">
         <use xlink:href="/sprite.css.svg#tiktok" />
     </svg>
 </a>}
 
 <style>
     a {
+        --size: 35px;
+
         display: inline-flex;
         color: #fff;
         gap: 1rem;
-        width: 35px;
-        height: 35px;
+        width: var(--size);
+        height: var(--size);
 
         &:hover {
             color: var(--color-accent-light);
