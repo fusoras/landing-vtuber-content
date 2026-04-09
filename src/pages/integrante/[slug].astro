@@ -40,7 +40,7 @@ const { Content } = await render(integrante)
             </div>
             <picture>
                 {coverAvif && <source srcset={coverAvif} type="image/avif" />}
-                <img src={cover} alt={name} transition:animate="fade"/>
+                <img src={cover} alt={name} width="300" height="300" transition:animate="fade">
             </picture>
         </section>
         <Content />
@@ -54,7 +54,6 @@ const { Content } = await render(integrante)
     .back {
         display: flex;
         align-items: center;
-        color: #fff;
         text-decoration: none;
         gap: 0.3em;
         max-width: 150px;
@@ -80,7 +79,6 @@ const { Content } = await render(integrante)
 
     section img {
         width: 300px;
-        max-width: 350px;
         border-radius: 12px;
     }
 
