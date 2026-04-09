@@ -1,19 +1,22 @@
+---
+import { FOLLOWSX, FOLLOWSYOUTUBE, FOLLOWSINSTAGRAM } from "@/consts";
+---
 <footer>
 	<div class="social-links">
-		<a href="https://www.youtube.com/@TonotosCrew" target="_blank">
-			<span class="sr-only">Follow Astro on Mastodon</span>
+		<a href="https://www.youtube.com/@TonotosCrew" target="_blank" title={FOLLOWSYOUTUBE}>
+			<span class="sr-only">{FOLLOWSYOUTUBE}</span>
 			<svg width="30" height="30">
 				<use xlink:href="/sprite.css.svg#youtube" />
 			</svg>
 		</a>
-		<a href="https://x.com/TonotosCrew" target="_blank">
-			<span class="sr-only">Follow Astro on Twitter</span>
+		<a href="https://x.com/TonotosCrew" target="_blank" title={FOLLOWSX}>
+			<span class="sr-only">{FOLLOWSX}</span>
 			<svg width="30" height="30">
 				<use xlink:href="/sprite.css.svg#x" />
 			</svg>
 		</a>
-		<a href="https://www.instagram.com/tonotoscrew/" target="_blank">
-			<span class="sr-only">Go to Astro's GitHub repo</span>
+		<a href="https://www.instagram.com/tonotoscrew/" target="_blank" title={FOLLOWSINSTAGRAM}>
+			<span class="sr-only">{FOLLOWSINSTAGRAM}</span>
 			<svg width="30" height="30">
 				<use xlink:href="/sprite.css.svg#instagram" />
 			</svg>
