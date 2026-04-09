@@ -33,7 +33,7 @@ import HeaderLink from '@/components/HeaderLink.astro';
 		</div>
 		<div class="menu">
 			<button popovertarget="my-dialog" aria-label="Abrir menú de navegación">
-				<svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/sprites.svg#menu"></use></svg>
+				<svg width="24" height="24" aria-hidden="true" focusable="false"><use href="/sprites.svg#menu"></use></svg>
 			</button>
 
 			<section id="my-dialog" popover class="modal-open">
@@ -145,7 +145,12 @@ import HeaderLink from '@/components/HeaderLink.astro';
 					color: var(--color-text-primary);
 				}
 
+
+
 				.modal-open {
+					translate: 100% 0;
+					transition: translate 0.25s ease;
+
 					&::backdrop {
 						background-color: rgb(0 0 0 / 60%);
 					}
@@ -163,6 +168,12 @@ import HeaderLink from '@/components/HeaderLink.astro';
 						height: 100%;
 						width: 70%;
 						touch-action: none;
+						translate: 0 0;
+
+						@starting-style {
+							translate: 100% 0;
+						}
+
 
 						& button {
 							border: solid 1px hsl(var(--color-text-muted-hsl));
