@@ -29,6 +29,7 @@
 	--color-text-muted-hsl: 0deg 0% 25%;
 	--color-text-primary: hsl(var(--color-text-primary-hsl));
 	--color-accent: hsl(312deg 55% 63%);
+	--grandient: hsl(300deg 60% 50%), hsl(300deg 40% 50%);
 
 	/*  hsl(312deg 40% 50%); */
 	--color-accent-light: hsl(from var(--color-accent) h calc(s - 15) calc(l - 13));

@@ -11,20 +11,30 @@
 </button>
 <style>
     .button-go-top {
-        --size: 40px;
+        --size: 50px;
 
         position: fixed;
         bottom: 20px;
         right: 20px;
         width: var(--size);
         height: var(--size);
+        display: grid;
+        place-items: center;
         border-radius: 50%;
         border: none;
-        background-color: var(--color-accent-dark);
+        background: linear-gradient(var(--grandient)) no-repeat;
         cursor: pointer;
+        padding: 0;
         animation: progress-grow auto both;
         animation-timeline: scroll();
         animation-range: 0 200px;
+
+        & svg {
+            --size: 35px;
+
+            width: var(--size);
+            height: var(--size);
+        }
     }
 
     @keyframes progress-grow {
