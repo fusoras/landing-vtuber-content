@@ -5,7 +5,7 @@ import HeaderLink from '@/components/HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2 class="site-logo"><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Inicio</HeaderLink>
 			<HeaderLink href="/integrante">Integrantes</HeaderLink>
@@ -81,12 +81,6 @@ import HeaderLink from '@/components/HeaderLink.astro';
 			justify-content: space-between;
 			height: min(70px, 10vh);
 
-			& .internal-links {
-				@media (width <= 570px) {
-					display: none;
-				}
-			}
-
 			& a {
 				padding: 1em 0.5em;
 				border-bottom: 4px solid transparent;
@@ -99,6 +93,21 @@ import HeaderLink from '@/components/HeaderLink.astro';
 					&:hover {
 						color: var(--color-text-primary);
 					}
+				}
+			}
+
+			& .site-logo {
+				margin: 0;
+				font-size: 1em;
+
+				& a[href="/"]:hover {
+					color: var(--color-text-primary);
+				}
+			}
+
+			& .internal-links {
+				@media (width <= 570px) {
+					display: none;
 				}
 			}
 
@@ -122,16 +131,7 @@ import HeaderLink from '@/components/HeaderLink.astro';
 				}
 			}
 
-			h2 {
-				margin: 0;
-				font-size: 1em;
-
-				& a:hover {
-					color: var(--color-text-primary);
-				}
-			}
-
-			.menu {
+			& .menu {
 				display: none;
 
 				@media (width <= 740px) {
