@@ -1,6 +1,6 @@
 <script>
     function handleClick() {
-        window.scrollTo({
+        globalThis.scrollTo({
             top: 0,
             behavior: 'smooth',
         })
