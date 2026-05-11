@@ -17,7 +17,6 @@
     "@astrojs/svelte": "8.0.5",
     "@justinribeiro/lite-youtube": "1.9.0",
     "astro": "6.1.9",
-    "svelte": "5.55.5",
     "typescript": "6.0.3"
   },
   "devDependencies": {

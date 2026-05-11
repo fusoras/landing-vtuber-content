@@ -1,10 +1,12 @@
 <button-go-top> </button-go-top>
+<button-go-top> </button-go-top>
+
 <script>
     class ButtonGoTop extends HTMLElement {
         connectedCallback() {
             this.render();
             const button = this.querySelector(".button-go-top");
-            button.addEventListener("click", this.handleClick);
+            button?.addEventListener("click", this.handleClick);
         }
 
         render() {
