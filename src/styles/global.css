@@ -36,7 +36,13 @@
 
 	/* hsl(300deg 40% 35%); */
 	--color-accent-dark: hsl(from var(--color-accent) calc(h - 12) calc(s - 15) calc(l - 28));
-	
+
+	/* ButtonGoTop styles */
+	--bgt-bg-color: linear-gradient(var(--grandient)) no-repeat;
+	--bgt-size: 50px;
+	--bgt-bg-color-icon: #e9dfdf;
+	--bgt-size-icon: 35px;
+
 	color-scheme: dark;
 	font-family: Atkinson, sans-serif;
 }

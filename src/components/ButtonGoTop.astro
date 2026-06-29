@@ -20,13 +20,13 @@
                     position: fixed;
                     bottom: 20px;
                     right: 20px;
-                    width: var(--size);
-                    height: var(--size);
+                    width: var(--bgt-size, --size);
+                    height: var(--bgt-size, --size);
                     display: grid;
                     place-items: center;
                     border-radius: 50%;
                     border: none;
-                    background: linear-gradient(var(--grandient)) no-repeat;
+                    background: var(--bgt-bg-color, #343232);
                     cursor: pointer;
                     padding: 0;
                     animation: progress-grow auto both;
@@ -36,8 +36,9 @@
                     & svg {
                         --size: 35px;
 
-                        width: var(--size);
-                        height: var(--size);
+                        width: var(--bgt-size-icon, --size);
+                        height: var(--bgt-size-icon, --size);
+                        color: var(--bgt-bg-color-icon, #fff);
                     }
                 }
 
